@@ -11,5 +11,5 @@ WITH SERDEPROPERTIES (
   'mapping' = 'TRUE'
 )
 STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
-LOCATION 's3://de-fpt-quangnb/step_trainer/landing/'
+LOCATION 's3://de-fpt-quangnb3/step_trainer/landing/'
 TBLPROPERTIES ('classification' = 'json');

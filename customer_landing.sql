@@ -1,14 +1,14 @@
 CREATE EXTERNAL TABLE IF NOT EXISTS `stedi`.`customer_landing` (
-  `birthday` string,
-  `registrationdate` bigint,
-  `sharewithresearchasofdate` bigint,
-  `customername` string,
+  `customerName` string,
   `email` string,
-  `lastupdatedate` bigint,
   `phone` string,
-  `sharewithfriendsasofdate` bigint,
-  `serialnumber` string,
-  `sharewithpublicasofdate` bigint
+  `birthDay` string,
+  `serialNumber` string,
+  `registrationDate` bigint,
+  `lastUpdateDate` bigint,
+  `shareWithResearchAsOfDate` bigint,
+  `shareWithPublicAsOfDate` bigint,
+  `shareWithFriendsAsOfDate` bigint
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 WITH SERDEPROPERTIES (
@@ -18,5 +18,5 @@ WITH SERDEPROPERTIES (
   'mapping' = 'TRUE'
 )
 STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
-LOCATION 's3://de-fpt-quangnb/customer/landing/'
+LOCATION 's3://de-fpt-quangnb3/customer/landing/'
 TBLPROPERTIES ('classification' = 'json');
